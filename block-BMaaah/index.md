@@ -2,9 +2,43 @@ writeCode
 
 Write code to execute below expressions.
 
-1. Create a database named `blog`.
-2. Create a collection called 'articles'.
+1. Create a database named `blog`. use blog
+2. Create a collection called 'articles'. db.createCollection('articles')
 3. Insert multiple documents(at least 3) into articles. It should have fields
+db.articles.insertMany(
+  {
+  _id: '123',
+  title: 'this',
+  details: 'r',
+  author: {
+    name: 'george',
+    email: 'g@gmail.com',
+    age: '22'
+  },
+  tags: ['js', 'mongo']
+},
+{
+  _id: '456',
+  title: 'that',
+  details: 'ra',
+  author: {
+    name: 'martin',
+    email: 'm@gmail.com',
+    age: '23'
+  },
+  tags: ['js', 'mongo']
+},{
+  _id: '789',
+  title: 'rr',
+  details: 'random',
+  author: {
+    name: 'leo',
+    email: 'l@gmail.com',
+    age: '25'
+  },
+  tags: ['js', 'mongo']
+}
+)
 
 - title as string
 - createdAt as date
@@ -34,12 +68,22 @@ Write code to execute below expressions.
 
 4. Find all the articles using `db.COLLECTION_NAME.find()`
 5. Find a document using \_id field.
-6. 1. Find documents using title
-7. 2. Find documents using author's name field.
+6. 1. Find documents using title db.articles.find({title:'rr'}) 
+7. 2. Find documents using author's name field.db.articles.find({author: {
+    name: 'leo',
+    email: 'l@gmail.com',
+    age: '25'
+  }}) 
 8. Find document using a specific tag.
 
-9. Update title of a document using its \_id field.
-10. Update a author's name using article's title.
+9. Update title of a document using its \_id field. db.articles.update({_id:'123',{$set : {
+  title: 'shejar'
+}}})
+10. Update a author's name using article's title. db.articles.update({title: 'shejar',{$set : {
+  author: {
+    name: 'rancho'
+  }
+}}})
 11. rename details field to description from all articles in articles collection.
 12. Add additional tag in a specific document.
 
