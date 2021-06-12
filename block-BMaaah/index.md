@@ -5,6 +5,40 @@ Write code to execute below expressions.
 1. Create a database named `blog`. use blog
 2. Create a collection called 'articles'. db.createCollection('articles')
 3. Insert multiple documents(at least 3) into articles. It should have fields
+let random = [
+  {
+  _id: '123',
+  title: 'this',
+  details: 'r',
+  author: {
+    name: 'george',
+    email: 'g@gmail.com',
+    age: '22'
+  },
+  tags: ['js', 'mongo']
+},
+{
+  _id: '456',
+  title: 'that',
+  details: 'ra',
+  author: {
+    name: 'martin',
+    email: 'm@gmail.com',
+    age: '23'
+  },
+  tags: ['js', 'mongo']
+},{
+  _id: '789',
+  title: 'rr',
+  details: 'random',
+  author: {
+    name: 'leo',
+    email: 'l@gmail.com',
+    age: '25'
+  },
+  tags: ['js', 'mongo']
+}
+]
 db.articles.insertMany(
   {
   _id: '123',
